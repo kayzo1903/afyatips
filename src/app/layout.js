@@ -1,10 +1,12 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-// import Themeprovider from "./utils/Themeprovider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const inter = Poppins({subsets:["latin"] , weight : ["100" , "200" , "300" , "500" ,"700" ,"900" ] });
+const inter = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "500", "700", "900"],
+});
 
 export const metadata = {
   title: "afyatips",
@@ -14,12 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        {/* <Themeprovider> */}
-          <Navbar />
-          {children}
-          <Footer />
-          {/* </Themeprovider> */}
+      <body className={inter.className} layout="true">
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { Envelope, SearchTab } from "./Icons";
 
 const NewsLetter = () => {
   return (
-    <article className="w-full sm:w-[390px] lg:w-[420px] py-6 bg-main dark:bg-ter px-8">
+    <article className="w-full sm:w-[390px] lg:w-[420px] prose py-6 bg-main dark:bg-ter px-8">
       <div className="w-full text-center space-y-1">
         <h6 className="text-xl font-bold">Weekly Newsletter</h6>
         <p className="text-sm text-gray-500">

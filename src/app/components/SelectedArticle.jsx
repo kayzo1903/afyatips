@@ -7,7 +7,7 @@ const SelectedArticle = ({ cat }) => {
   
   return (
     <article className={`${ cat.length > 0 ? "block" : "hidden"} transition-all duration-500 space-y-4 my-8`}>
-      <PostCat />
+      {/* <PostCat /> */}
       <button className="text-skin">load more</button>
     </article>
   );

@@ -11,13 +11,3 @@
 :root {
   --background-color : #fff
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color : #181A2A
-  }
-}
-
-body {
-  --background-color : #181A2A
-} 

@@ -1,12 +1,10 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import Search from "./Search";
-import DarkLightMode from "./DarkLightMode";
+// import Search from "./Search"; no needs for search bar yet
 import { QueueList } from "./Icons";
 import SideNavbar from "./SideNavbar";
 import { navbarLink } from "../utils/data";
-import Home from "../page";
 
 const Navbar = () => {
   const [isNavOpen, setOpenNav] = useState(false);
@@ -33,10 +31,9 @@ const Navbar = () => {
             })}
           </ul>
         </nav>
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Search />
-        </div>
-        <DarkLightMode />
+        </div> */}
         <div className="block md:hidden">
           <button onClick={navBarSetup}>
             <QueueList />

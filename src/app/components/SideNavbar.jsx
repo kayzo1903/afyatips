@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+// import Search from "./Search"; //no need for search bar yet
 import Link from "next/link";
 import { navbarLink } from "../utils/data";
 
@@ -11,9 +11,9 @@ const SideNavbar = ({ status }) => {
       }  left-0 w-full bg-[#ffff] dark:bg-gray-950 h-screen`}
     >
       <div className="w-full flex flex-col items-center gap-8 justify-center py-4">
-        <Search />
+        {/* <Search /> */} 
         <nav className="text-sm font-light">
-          <ul className="flex flex-col gap-6 items-center text-gray-900 dark:text-white  ">
+          <ul className="flex flex-col gap-6 items-center text-gray-900 dark:text-white">
             {navbarLink.map((item) => {
               const { id, link, name } = item;
               return (

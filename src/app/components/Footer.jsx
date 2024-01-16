@@ -5,19 +5,19 @@ import { category, navbarLink } from "../utils/data";
 
 const Footer = () => {
   return (
-    <section className="w-full bg-c1 dark:bg-ter h-fit pt-8 pb-2 justify-between">
+    <section className="w-full bg-c1 dark:bg-sec h-fit pt-8 pb-2 justify-between">
       <div className="max-w-screen-lg mx-auto px-2">
         <aside className="w-full flex gap-4 flex-wrap lg:flex-nowrap justify-center sm:justify-between">
-          <article className="w-full sm:w-80">
-            <h6 className="text-xl font-bold">About</h6>
-            <p className="text-justify text-sm">
+          <article className="w-full sm:w-80 ">
+            <h6 className="text-xl font-bold prose prose-xl">About</h6>
+            <p className="text-justify text-sm prose prose-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus molestiae perferendis magni aliquam fuga sit laudantium
               soluta veritatis, atque corrupti provident, hic fugiat quaerat
               iure esse quia praesentium? Neque, nihil?
             </p>
           </article>
-          <article className="w-36 px-2">
+          <article className="w-36 px-2 prose">
             <h6 className="text-xl font-bold w-fit">Quick Link</h6>
             <ul>
               {navbarLink.map((item) => {
@@ -33,7 +33,7 @@ const Footer = () => {
               })}
             </ul>
           </article>
-          <article className="w-36 px-2">
+          <article className="w-36 px-2 prose">
             <h6 className="text-xl font-bold">Catergory</h6>
             <ul>
               {category.map((item) => {

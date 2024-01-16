@@ -19,15 +19,15 @@ export const navbarLink = [
 export const category = [
         {
             id : '01' ,
-            name : 'diet' ,
+            name : 'Diet' ,
         } ,
         {
             id : '02' ,
-            name : 'relationship' ,
+            name : 'Relationship' ,
         } ,
         {
             id : '03' ,
-            name : 'pyschology' ,
+            name : 'Psychology' ,
         } ,
         {
             id : '04' ,
@@ -35,6 +35,10 @@ export const category = [
         } ,
         {
             id : '05' ,
-            name : 'workout' ,
+            name : 'Workout' ,
+        } ,
+        {
+            id : '06' ,
+            name : 'Motivation' ,
         } 
 ]

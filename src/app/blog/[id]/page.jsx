@@ -1,77 +1,57 @@
 import React from "react";
 import Image from "next/image";
-import heropage from "../../../../public/heropage.jpg";
+import { getPost } from "@/app/utils/sanityData";
+import { urlForImage } from "../../../../sanity/lib/image";
+import { dateConvert } from "@/app/utils/date";
+import { PortableText } from "@portabletext/react";
+import Link from "next/link";
 
-const Postpage = ({
-  category,
-  title,
-  athuorpc,
-  athuorname,
-  date,
-  articlepic,
-  content,
-}) => {
+const Postpage = async ({ params }) => {
+  const slugUrl = params.id;
+  const data = await getPost(slugUrl);
+
+  const { categories, mainImage, author, title, publishedAt, body } = data;
+
+  if (!data) {
+    <main className="w-full h-screen flex justify-between items-center">
+      <div className="w-56">
+        <h3 className="p-4">Opps something went wrong</h3>
+        <Link href='/'> try again </Link>
+      </div>
+    </main>;
+  }
+
   return (
     <article className="pt-8 space-y-4 pb-4">
-      {/* <span>{category}</span> */}
-      <span className="w-fit py-2 px-4 bg-skin rounded-lg text-white">Diet</span>
-      {/* <h3>{title}</h3> */}
-      <h3 className="text-xl font-bold text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse adipisci
-        sunt corrupti illum cum a maxime impedit{" "}
-      </h3>
+      <span className="w-fit py-2 px-4 bg-skin rounded-lg text-white">
+        {categories[0].title}
+      </span>
+      <h3 className="pose prose-2xl font-bold text-justify">{title}</h3>
       <div className="w-full flex gap-2 items-center">
-        {/* <div>{athuorpc}</div> */}
         <div className="w-10 h-10 overflow-hidden rounded-full relative">
           <Image
-            src={heropage}
-            alt="hero image"
+            src={urlForImage(author.image)}
+            alt={author.name}
             fill={true}
             style={{ objectFit: "cover" }}
           />
         </div>
-        {/* <span>{athuorname}</span> */}
-        <span className="text-sm text-gray-400">John Doe</span>
-        {/* <span>{date}</span> */}
-        <span className="text-sm text-gray-400">January 09</span>
+        <span className="text-sm text-gray-400">{author.name}</span>
+        <span className="text-sm text-gray-400">
+          {dateConvert(publishedAt)}
+        </span>
       </div>
-      <div className="w-full sm:h-80 md:h-96 relative">
+      <div className="w-full h-72 sm:h-80 md:h-96 relative">
         <Image
-          src={heropage}
-          alt="hero image"
+          src={urlForImage(mainImage.image)}
+          alt={mainImage.alt}
           fill={true}
           style={{ objectFit: "cover" }}
         />
       </div>
-      {/* <div>{content}</div> */}
-      <div className="space-y-2 w-full">
-        <div className="space-y-1">
-          <h6 className="text-xl font-semibold">heading</h6>
-          <p className="text-base text-gray-600">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae fuga
-            veniam incidunt velit possimus aliquam nulla temporibus soluta, odit
-            voluptate alias illum. Pariatur nihil sit ducimus omnis ex quos
-            modi.
-          </p>
-        </div>
-        <div className="space-y-1">
-          <h6 className="text-xl font-semibold">heading</h6>
-          <p className="text-base text-gray-600">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae fuga
-            veniam incidunt velit possimus aliquam nulla temporibus soluta, odit
-            voluptate alias illum. Pariatur nihil sit ducimus omnis ex quos
-            modi.
-          </p>
-        </div>
-        <div className="space-y-1">
-          <h6 className="text-xl font-semibold">heading</h6>
-          <p className="text-base text-gray-600">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae fuga
-            veniam incidunt velit possimus aliquam nulla temporibus soluta, odit
-            voluptate alias illum. Pariatur nihil sit ducimus omnis ex quos
-            modi.
-          </p>
-        </div>
+      <div className="space-y-2 w-full prose text-justify prose-gray">
+        {/* //here we have to set configuration to allow inline image */}
+        <PortableText value={body} />
       </div>
     </article>
   );
