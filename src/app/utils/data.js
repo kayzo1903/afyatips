@@ -6,7 +6,7 @@ export const navbarLink = [
     } ,
     {
         id : '02',
-        name : 'Blog' ,
+        name : 'Article' ,
         link : "/blog"
     } ,
     {

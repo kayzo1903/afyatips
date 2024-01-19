@@ -1,11 +1,11 @@
 import React from "react";
-import LatestPost from "../components/LatestPost";
+import Blogfilter from "../components/Blogfilter";
 import Morepopular from "../components/Morepopular";
 
 const BlogPage = () => {
   return (
     <div>
-      <LatestPost />
+      <Blogfilter />
       <Morepopular />
     </div>
   );
