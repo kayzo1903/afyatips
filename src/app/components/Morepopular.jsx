@@ -10,7 +10,7 @@ const Morepopular = async () => {
     return (
       <section className="w-full py-8">
         <div className="w-full space-y-4">
-          <h3 className="text-xl font-bold">Popular Post</h3>
+          <h3 className="text-xl font-bold dark:text-main">Popular Post</h3>
           <div>Opps reload your page again</div>
         </div>
       </section>
@@ -20,7 +20,7 @@ const Morepopular = async () => {
   return (
     <section className="w-full py-8">
       <div className="w-full space-y-4">
-        <h3 className="text-xl font-bold">Popular Post</h3>
+        <h3 className="text-xl font-bold dark:text-main">Popular Post</h3>
         <Suspense fallback={<Loadingpage />}>
           <PostCat post={data} />
         </Suspense>

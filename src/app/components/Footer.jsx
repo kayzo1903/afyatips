@@ -8,26 +8,17 @@ const Footer = () => {
     <section className="w-full bg-c1 dark:bg-sec h-fit pt-8 pb-2 justify-between">
       <div className="max-w-screen-lg mx-auto px-2">
         <aside className="w-full flex gap-4 flex-wrap lg:flex-nowrap justify-center sm:justify-between">
-          <article className="w-full sm:w-80 ">
-            <h6 className="text-xl font-bold prose prose-xl">About</h6>
-            <p className="text-justify text-sm prose prose-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus molestiae perferendis magni aliquam fuga sit laudantium
-              soluta veritatis, atque corrupti provident, hic fugiat quaerat
-              iure esse quia praesentium? Neque, nihil?
-            </p>
-          </article>
           <article className="w-36 px-2 prose">
             <h6 className="text-xl font-bold w-fit">Quick Link</h6>
-            <ul>
+            <ul >
               {navbarLink.map((item) => {
                 const { id, link, name } = item;
                 return (
                   <li
                     key={id}
-                    className="text-sm dark:text-main text-gray-900 "
+                    className="text-sm "
                   >
-                    <Link href={link}>{name}</Link>
+                    <Link className="no-underline dark:text-main text-gray-900" href={link}>{name}</Link>
                   </li>
                 );
               })}
@@ -52,16 +43,16 @@ const Footer = () => {
           <NewsLetter />
         </aside>
       </div>
-      <h3 className="h-[1px] !w-full bg-gray-400 my-4"></h3>
+      <h3 className="h-[1px] !w-full bg-gray-400 my-4 "></h3>
       <div className="max-w-screen-lg mx-auto px-2 pt-4 flex justify-between items-center">
-        <div className="grid">
+        <div className="grid dark:text-main">
           <span className="text-xl">afyatips</span>
-          <span className="text-xs">
+          <span className="text-xs ">
             ©{new Date().getFullYear()} all right reserved
           </span>
         </div>
         <div>
-          <ul className="flex gap-2 text-sm">
+          <ul className="flex gap-2 text-sm dark:text-main">
             <li>
               <Link href={"/"}>Term of use</Link>
             </li>

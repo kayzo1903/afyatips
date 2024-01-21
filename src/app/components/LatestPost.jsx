@@ -12,7 +12,7 @@ const LatestPost = async () => {
     return (
       <section className="w-full py-8">
         <div className="w-full space-y-4">
-          <h3 className="text-xl font-bold">Articles</h3>
+          <h3 className="text-xl font-bold dark:text-main">Articles</h3>
           <div>Opps reload your page again</div>
         </div>
       </section>
@@ -22,7 +22,7 @@ const LatestPost = async () => {
   return (
     <section className="w-full py-8">
       <div className="w-full space-y-4">
-        <h3 className="text-xl font-bold">Articles</h3>
+        <h3 className="text-xl font-bold dark:text-main">Articles</h3>
         <Suspense fallback={<Loadingpage />}>
           {/* Use lazy-loaded PostCat component */}
           <PostCat post={data} />

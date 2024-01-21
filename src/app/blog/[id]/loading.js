@@ -2,7 +2,7 @@ import React from 'react'
 
 const loading = () => {
   return (
-    <div>loading....</div>
+    <div className='dark:bg-gray-950 dark:text-main'>loading....</div>
   )
 }
 

@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ThemeContextProvide } from "./libs/ThemeContext";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -16,10 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} layout="true">
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={inter.className}>
+        <ThemeContextProvide>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeContextProvide>
       </body>
     </html>
   );

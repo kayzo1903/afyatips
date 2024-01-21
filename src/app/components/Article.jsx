@@ -30,7 +30,7 @@ const BlogArticles = ({ post }) => {
           return (
             <Link
               href={`/blog/${slug}`}
-              className="w-full sm:w-[360px] h-[420px] py-2 px-2 shadow-xl md:scale-90"
+              className="w-full sm:w-[360px] h-[420px] py-2 px-2 shadow-xl md:scale-90 dark:bg-ter"
               key={_id}
             >
               <div className="w-full h-[390px] flex flex-col justify-between ">

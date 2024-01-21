@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { QueueList } from "./Icons";
 import SideNavbar from "./SideNavbar";
 import { navbarLink } from "../utils/data";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Navbar = () => {
   const [isNavOpen, setOpenNav] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full h-16 relative">
+    <header className="w-full h-16 relative dark:bg-gray-950 dark:text-main">
       <div className="flex pt-2 justify-between gap-2  items-center max-w-screen-lg mx-auto px-2">
         <span className="text-2xl font-bold">
           <Link href={"/"}>afyatips</Link>
@@ -34,6 +35,7 @@ const Navbar = () => {
         {/* <div className="hidden md:block">
           <Search />
         </div> */}
+        <ThemeSwitch />
         <div className="block md:hidden">
           <button onClick={navBarSetup}>
             <QueueList />

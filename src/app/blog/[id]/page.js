@@ -13,9 +13,9 @@ const Postpage = async ({ params }) => {
   const { categories, mainImage, author, title, publishedAt, body } = data;
 
   if (!data) {
-    <main className="w-full h-screen flex justify-between items-center">
+    <main className="w-full h-screen flex justify-between items-center dark:bg-gray-950">
       <div className="w-56">
-        <h3 className="p-4">Opps something went wrong</h3>
+        <h3 className="p-4 dark:text-main">Opps something went wrong</h3>
         <Link href='/'> try again </Link>
       </div>
     </main>;
@@ -26,7 +26,7 @@ const Postpage = async ({ params }) => {
       <span className="w-fit py-2 px-4 bg-skin rounded-lg text-white">
         {categories[0].title}
       </span>
-      <h3 className="pose prose-2xl font-bold text-justify">{title}</h3>
+      <h3 className="pose prose-2xl font-bold text-justify dark:text-main">{title}</h3>
       <div className="w-full flex gap-2 items-center">
         <div className="w-10 h-10 overflow-hidden rounded-full relative">
           <Image
@@ -49,7 +49,7 @@ const Postpage = async ({ params }) => {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="space-y-2 w-full prose text-justify prose-gray">
+      <div className="space-y-2 w-full prose text-justify dark:text-gray-300">
         {/* //here we have to set configuration to allow inline image */}
         <PortableText value={body} />
       </div>
