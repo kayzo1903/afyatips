@@ -26,7 +26,7 @@ const Blogfilter = () => {
   useEffect(()=>{
     const filteredArray = data.filter(item => catgr.includes(item.categories[0].title));
     setSelectedData(filteredArray)
-  },[catgr])
+  },[catgr , data])
 
   const handleSelection = (text) => {
     if (text === "All") {
