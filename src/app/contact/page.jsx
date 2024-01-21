@@ -21,7 +21,7 @@ const Contactpage = () => {
             happier life. At Afyatips, we believe in the power of knowledge to
             transform lives. Our health blog is dedicated to providing you with
             insightful tips, expert advice, and reliable information to guide
-            you on your wellness journey. Whether you're looking for practical
+            you on your wellness journey. Whether you are looking for practical
             fitness routines, delicious and nutritious recipes, or
             evidence-based insights on mental well-being, Afyatips is here for
             you
